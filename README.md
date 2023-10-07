@@ -1,7 +1,7 @@
-# animated-octo-system
-
 # Mobile Web-Based Application Development
+
 ## Requirements:
+
 ### To create a Mobile Web Site for Bike Sharing in Toronto.
 
 - The site contains two pages – the **Main** and the **Bike Share**.
