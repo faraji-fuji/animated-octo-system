@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("header-paragraph").innerHTML += `${data.name} / ${data.studentNumber}`;
             document.getElementById("footer-paragraph").innerHTML = `${data.name} / ${data.campus}`;
 
-            localStorage.setItem("studentNumber", data.studentNumber)
+            sessionStorage.setItem("studentNumber", data.studentNumber)
         }
 
         xhttp.open("GET", "http://127.0.0.1:5500/data/profile.json", true);
@@ -24,7 +24,7 @@ document.getElementById("fetch-btn").addEventListener("click", function () {
     fetch("http://127.0.0.1:5500/data/bikeshare.json")
         .then(response => response.json())
         .then(data => {
-            let studentNumber = localStorage.getItem("studentNumber")
+            let studentNumber = sessionStorage.getItem("studentNumber")
 
             data.forEach(item => {
                 const bikeShare = new BikeShare(item.id, item.stationName, item.availableDocks, item.availableBikes, item.statusValue, item.city, studentNumber)
@@ -48,6 +48,7 @@ class BikeShare {
     }
 
     save() {
-        localStorage.setItem(this.id, this)
+        localStorage.setItem(this.id, JSON.stringify(this))
     }
 }
+
