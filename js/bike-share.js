@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.log(`clicked ${listItem.innerHTML}`)
 
                     document.getElementById("station-detail").innerHTML = `
-                    <h3>Bike Detail</h3>
+                    <h3>Station Details</h3>
                     <p>Station ID: ${bikeShareData.id} </p>
                     <p>Station Name: ${bikeShareData.stationName} </p>
                     <p>Available Docks: ${bikeShareData.availableDocks} </p>
